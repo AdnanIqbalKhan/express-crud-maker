@@ -1,0 +1,46 @@
+<%  const modelNameC = modelName.toFirstCapitalCase() _%>
+import { Request, Response } from 'express';
+import <%= modelName %>Manager  from './<%= modelName %>.manager';
+import { I<%= modelNameC %>, <%= modelName %>Schema } from './<%= modelName %>.type';
+import {
+  Body,
+  Controller,
+  Get,
+  Path,
+  Post,
+  Put,
+  Query,
+  Route,
+  Delete,
+} from "tsoa";
+
+@Route("<%= modelName %>")
+export class <%= modelName %>Controller {
+  
+  @Get()
+  async getAll(req: Request, res: Response) {
+    return <%= modelName %>Manager.getAll()
+  }
+
+  @Get("{id}")
+  async getById(@Path() id: number) {
+    return <%= modelName %>Manager.getById(id)
+  }
+
+  @Post()
+  async create(@Body() requestBody: I<%= modelNameC %>) {
+    <%= modelName %>Schema.parse(requestBody);
+    return <%= modelName %>Manager.create(requestBody)
+  }
+  
+  @Put("{id}")
+  async update(@Path() id: number, @Body() requestBody: I<%= modelNameC %>) {
+    <%= modelName %>Schema.parse(requestBody);
+    return <%= modelName %>Manager.update(id, requestBody)
+  }
+
+  @Delete("{id}")
+  async remove(@Path() id: number) {
+    return <%= modelName %>Manager.remove(id)
+  }
+}

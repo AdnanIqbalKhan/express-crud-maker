@@ -1,0 +1,31 @@
+<%  const modelNameC = modelName.toFirstCapitalCase() _%>
+import { I<%= modelNameC %> } from './<%= modelName %>.type';
+import <%= modelName %>Dto from './<%= modelName %>.dto';
+
+export const getAll = () => {
+    return <%= modelName %>Dto.getAll()
+}
+
+export const getById = (id: number) => {
+    return <%= modelName %>Dto.getById(id)
+}
+
+export const create = (data: I<%= modelNameC %> ) => {
+    return <%= modelName %>Dto.create(data)
+}
+
+export const update = (id: number, data: I<%= modelNameC %>) => {
+    return <%= modelName %>Dto.update(id, data)
+}
+
+export const remove = (id: number) => {
+    return <%= modelName %>Dto.remove(id)
+}
+
+export default = {
+    getAll,
+    getById,
+    create,
+    update,
+    remove
+}

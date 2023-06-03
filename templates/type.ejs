@@ -1,0 +1,10 @@
+<%  const modelNameC = modelName.toFirstCapitalCase() _%>
+import * as z from 'zod';
+
+export const <%= modelName %>Schema = z.object({
+  <% attributes.forEach((attr) => { _%>
+  <%= attr.name _%>: z.<%= attr.type _%>(),
+  <% }) _%>
+});
+
+export type I<%= modelNameC %> = z.infer<typeof <%= modelName %>Schema>;

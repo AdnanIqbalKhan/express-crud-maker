@@ -1,0 +1,27 @@
+<%  const modelNameC = modelName.toFirstCapitalCase() _%>
+import { I<%= modelNameC %> } from './<%= modelName %>.type';
+
+const <%= modelName %>Dto = {
+  getAll: () => {
+    // Implement getAll query
+    throw new Error('Method not implemented.');
+  },
+  getById: (id: number) => {
+    // Implement getById query
+    throw new Error('Method not implemented.');
+  },
+  create: (data: I<%= modelNameC %>) => {
+    // Implement create query
+    throw new Error('Method not implemented.');
+  },
+  update: (id: number, data: I<%= modelNameC %>) => {
+    // Implement update query
+    throw new Error('Method not implemented.');
+  },
+  remove: (id: number) => {
+    // Implement remove query
+    throw new Error('Method not implemented.');
+  },
+};
+
+export default <%= modelName %>Dto;

@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import { <%= modelName %>Controller } from './<%= modelName %>.controller';
+
+const router = Router();
+const <%= modelName.toLowerCase() %>Ctrl = new <%= modelName %>Controller();
+
+router.get('/', <%= modelName.toLowerCase() %>Ctrl.getAll);
+router.get('/:id', <%= modelName.toLowerCase() %>Ctrl.getById);
+router.post('/', <%= modelName.toLowerCase() %>Ctrl.create);
+router.put('/:id', <%= modelName.toLowerCase() %>Ctrl.update);
+router.delete('/:id', <%= modelName.toLowerCase() %>Ctrl.remove);
+
+export default router;
