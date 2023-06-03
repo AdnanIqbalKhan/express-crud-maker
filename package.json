@@ -1,6 +1,6 @@
 {
   "name": "express-crud-maker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "license": "MIT",
   "description": "A crud generator fot express js",
@@ -9,6 +9,22 @@
   "bin": {
     "express-crud-maker": "./bin/index.js"
   },
+  "author": {
+    "name": "Adnan Iqbal Khan",
+    "email": "hafizadnaniqbalkhan@gmail.com",
+    "url": "https://github.com/AdnanIqbalKhan"
+  },
+  "homepage": "https://github.com/AdnanIqbalKhan/express-crud-maker",
+  "bugs": {
+    "url": "https://github.com/AdnanIqbalKhan/express-crud-maker/issues"
+  },
+  "keywords": [
+    "express",
+    "generator",
+    "crud",
+    "api",
+    "swagger"
+  ],
   "scripts": {
     "start": "node ./bin/index.js",
     "build": "swc ./src -d bin",
